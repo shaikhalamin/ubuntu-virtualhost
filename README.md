@@ -4,7 +4,7 @@
 
 #now copy 000-default conf like the following
 
-#sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/test.laravelrest.com.conf
+#sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/laravelrestvue.com.conf
 
 now edit the conf file like the following
 ```php
