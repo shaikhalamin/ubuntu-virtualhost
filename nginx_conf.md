@@ -102,3 +102,24 @@ sudo service nginx reload
 now edit your host file give a localhost ip and yourdomainname
 
 ```
+
+
+#File and folder permission for php in root
+
+```javascript
+https://stackoverflow.com/questions/30639174/how-to-set-up-file-permissions-for-laravel
+
+sudo chown -R www-data:www-data /var/www/html/
+
+sudo usermod -a -G www-data samin
+
+sudo find /var/www/html/ -type f -exec chmod 644 {} \;
+
+sudo find /var/www/html/ -type d -exec chmod 755 {} \;
+
+sudo chown -R samin:www-data /var/www/html/
+
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+
+```
