@@ -1,3 +1,5 @@
+#HOW TO SETUP VIRTUAL HOST IN UBUNTU LINUX FOR PHP
+```bash
 sudo apt update
 sudo apt upgrade
 
@@ -12,26 +14,36 @@ sudo apt update
 
 sudo apt install php7.2 php7.2-curl php7.2-common php7.2-cli php7.2-mysql php7.2-mbstring php7.2-fpm php7.2-xml php7.2-zip php7.2-gd php7.2-common php7.2-intl php7.2-bcmath -y
 
+```
 
-//now open php fpm ini file and search for cgi.fix_pathinfo and make it 0 from 1
+
+#now open php fpm ini file and search for cgi.fix_pathinfo and make it 0 from 1
+
+```javascript
+
 sudo gedit /etc/php/7.2/fpm/php.ini
 
 //restart php fpm 
 
 sudo service php7.2-fpm start
 
-[if php 7.4 only option then sudo gedit /etc/php/7.2/fpm/php.ini change cgi.fix_pathinfo=0 then sudo service php7.4-fpm start]
+[if php 7.4 only option then sudo gedit /etc/php/7.4/fpm/php.ini change cgi.fix_pathinfo=0 then sudo service php7.4-fpm start]
 
+sudo gedit /etc/php/7.2/fpm/php.ini
 
-cgi.fix_pathinfo=0
+change cgi.fix_pathinfo=0
 
 sudo apt install mysql-server [php7.4-mysql]
 
 sudo service nginx restart
 sudo service nginx reload
 
+```
 
-then copy the default conf to your desired conf name
+
+#Then copy the default conf to your desired conf name
+
+```javascript
 
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/production_app.conf
 
@@ -76,12 +88,17 @@ server {
 
 }
 
+```
 
-then create a simlink for your configuration using the following command
+
+#Then create a simlink for your configuration using the following command
+```javascript
 
 sudo ln -s /etc/nginx/sites-available/opencart.conf /etc/nginx/sites-enabled/ 
 
 sudo service nginx restart
 sudo service nginx reload
 
-now edit your host file give a localhost ip and domain 
+now edit your host file give a localhost ip and yourdomainname
+
+```
