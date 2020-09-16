@@ -54,7 +54,7 @@ server {
 
     server_name production_app.com www.production_app.com;
 
-    root /var/www/html/opencart/;
+    root /var/www/html/production_app/public;
 
     index index.php;
 
